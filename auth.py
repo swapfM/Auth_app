@@ -6,6 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
 from flask_login import login_user
 from flask_login import login_user, logout_user, login_required
+import random
 
 
 auth = Blueprint('auth', __name__)
@@ -40,7 +41,8 @@ def signup_post():
         flash('User already Exists !!')
         return redirect(url_for('auth.signup'))
 
-    
+   
+   # a = random.randint(0,99999)
     new_user = User(name = name, password = generate_password_hash(password, method='sha256'))
 
 

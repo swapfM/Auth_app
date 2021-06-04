@@ -2,6 +2,17 @@
 
 {% block content %}
 <h1 class="title">
-  Welcome, {{ name }}
+  Welcome {{ name }}
+  <br>
+  Your Number is {{num}}
+ 
 </h1>
+<form method="POST" action="/profile">
+  <button class = "button is-primary is-rounded" style="font-weight:bold;">Generate Number</button>
+</form>
+<br>
+<br>
+<form method="POST" action="/">
+  <button class = "button is-primary is-rounded" style="font-weight: bold;">Save</button>
+</form>
 {% endblock %}

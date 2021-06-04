@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if not current_user.is_authenticated %}
 <h1 class="title">
-  Flask Login Example
+  Simple Flask webapp
 </h1>
 <h2 class="subtitle">
-  Easy authentication and authorization in Flask.
+  User may login to see his number
 </h2>
+{% endif %}
+
+{% if current_user.is_authenticated %}
+<h1 class="title">
+  Your Number is :&nbsp;{{num}}
+</h1>
+{% endif %}
 {% endblock %}
