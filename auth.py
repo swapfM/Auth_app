@@ -1,6 +1,6 @@
 from flask import Blueprint
 from werkzeug.exceptions import RequestEntityTooLarge
-from . import db
+from .app import db
 from flask import Blueprint, render_template,flash,redirect,url_for, request
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
